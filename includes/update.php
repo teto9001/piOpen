@@ -1,3 +1,3 @@
 <?php
-print(shell_exec('cd /var/www && git pull origin'));
+print(exec('cd /var/www && git pull origin'));
 ?>
