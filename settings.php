@@ -29,7 +29,7 @@
                 
                 $("#updateresult").html(data);
                $("#updateresult").addClass("alert alert-success");
-               $("#cmdupdate").text("Updated.");
+               $("#cmdupdate").text("Updated!");
                $("#loading").hide();
               }
             });
