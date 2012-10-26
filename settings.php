@@ -17,6 +17,7 @@
         $(this).text("Update started...");
         $("#loading").show();
         $.ajax({
+              timeout: 30000,
               url: "includes/update.php"
             }).done(function(data) { 
                $("#updateresult").text(data);
