@@ -7,7 +7,19 @@
       Current www branch version: <?php print(shell_exec('cd /var/www && git rev-parse HEAD')); ?><br/>
       Online www branch version: <br/>
 
-      <a href="update.php">Update</a>
+      <a href="#" id="cmdupdate" class="btn btn-primary">Update</a>
+      <div id="updateresult"></div>
+      <script type="text/javascript">
+      $("#cmdupdate").click(function(){
+        $(this).text("Update started...");
+        $.ajax({
+              url: "includes/update.php"
+            }).done(function(data) { 
+               $("#updateresult").text(data);
+               $("#updateresult").addclass("label");
+            });
+      });
+      </script>
      </div>
     </div> <!-- /container -->
 
