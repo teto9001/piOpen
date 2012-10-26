@@ -8,7 +8,7 @@
       Online www branch version: <br/>
 
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
-      <div id="loading" class="progress progress-striped active hidden">
+      <div id="loading" class="progress progress-striped active hide">
         <div class="bar" style="width: 100%;"></div>
       </div>
       <div id="updateresult"></div>
