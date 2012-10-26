@@ -18,13 +18,17 @@
         $("#loading").show();
         $.ajax({
               timeout: 30000,
-              url: "includes/update.php"
-            }).done(function(data) { 
-              alert("Done");
-               $("#updateresult").text(data);
+              url: "includes/update.php",
+              error: function (request, status, error) {
+                alert(request.responseText);
+              },
+              success: function (data) {
+                alert("Done");
+                $("#updateresult").text(data);
                $("#updateresult").addClass("alert alert-success");
                $("#cmdupdate").text("Updated.");
                $("#loading").hide();
+              }
             });
       });
       </script>
