@@ -20,11 +20,14 @@
               timeout: 30000,
               url: "includes/update.php",
               error: function (request, status, error) {
-                alert(request.responseText);
+               $("#updateresult").text(request.responseText);
+               $("#updateresult").addClass("alert alert-warning");
+               $("#cmdupdate").text("Retry");
+               $("#loading").hide();
               },
               success: function (data) {
-                alert("Done");
-                $("#updateresult").text(data);
+                
+                $("#updateresult").html(data);
                $("#updateresult").addClass("alert alert-success");
                $("#cmdupdate").text("Updated.");
                $("#loading").hide();
