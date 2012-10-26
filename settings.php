@@ -4,7 +4,7 @@
     <div class="container">
      <div class="span8 offset2 well">
       <h1 style="color:#D00;">Settings</h1>
-      Current www branch version: <?php shell_exec('cd /var/www && git rev-parse HEAD'); ?><br/>
+      Current www branch version: <?php print(shell_exec('cd /var/www && git rev-parse HEAD')); ?><br/>
       Online www branch version: <br/>
 
       <a href="update.php">Update</a>
