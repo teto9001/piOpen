@@ -20,6 +20,7 @@
               timeout: 30000,
               url: "includes/update.php"
             }).done(function(data) { 
+              alert("Done");
                $("#updateresult").text(data);
                $("#updateresult").addClass("alert alert-success");
                $("#cmdupdate").text("Updated.");
