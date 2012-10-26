@@ -16,7 +16,8 @@
               url: "includes/update.php"
             }).done(function(data) { 
                $("#updateresult").text(data);
-               $("#updateresult").addclass("label");
+               $("#updateresult").addClass("alert alert-success");
+               $("#cmdupdate").text("Updated.")
             });
       });
       </script>
