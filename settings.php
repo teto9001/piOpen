@@ -18,9 +18,9 @@ $forcecheck = $_GET["u"];
       <?php } ?>
             Current scripts branch version: <?php print($reposcripts->run('rev-parse HEAD')); ?><br/>
       <?php if ($forcecheck == "true") { ?>
-      Online www branch version: <?php 
+      Online scripts branch version: <?php 
           $reposcripts->run('fetch'); 
-          print($reposcripts->run('rev-parse origin/scripts')); 
+          print($reposcripts->run('rev-parse origin/shellScripts')); 
           ?><br/> 
       <?php } else { ?>
       <a href="settings.php?u=true" class="label">Check for updates</a><br/>
