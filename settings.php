@@ -9,7 +9,7 @@ $forcecheck = $_POST["u"];
      <div class="span8 offset2 well">
       <h1 style="color:#D00;">Settings</h1>
       Current www branch version: <?php print($repo->run('rev-parse HEAD')); ?><br/>
-      <?php if ($forcecheck = "true") { ?>
+      <?php if ($forcecheck == "true") { ?>
       Online www branch version: <?php $repo->run('fetch'); print($repo->run('rev-parse origin/www')); ?><br/> 
       <?php } ?>
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
