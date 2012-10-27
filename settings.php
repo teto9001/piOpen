@@ -1,11 +1,14 @@
 <!-- v0001 -->
-<?php include('includes/top.php'); ?>
+<?php include('includes/top.php'); 
+require_once "includes/git.php"
+$repo = Git::open('/var/www');
+ ?>
 
     <div class="container">
      <div class="span8 offset2 well">
       <h1 style="color:#D00;">Settings</h1>
-      Current www branch version: <?php print(shell_exec('cd /var/www && git rev-parse HEAD')); ?><br/>
-      Online www branch version: <?php  print(shell_exec('cd /var/www && git log www -n 1 --pretty=format:%H')); ?><br/> 
+      Current www branch version: <?php print($repo->run('rev-parse HEAD')); ?><br/>
+      Online www branch version: <?php  print('?'); ?><br/> 
 
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
       <div id="loading" class="progress progress-striped active hide">
