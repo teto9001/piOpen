@@ -1,6 +1,6 @@
 <!-- v0001 -->
 <?php include('includes/top.php'); 
-require_once "includes/git.php"
+require_once "includes/git.php";
 $repo = Git::open('/var/www');
  ?>
 
