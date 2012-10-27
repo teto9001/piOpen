@@ -10,7 +10,10 @@ $forcecheck = $_POST["u"];
       <h1 style="color:#D00;">Settings</h1>
       Current www branch version: <?php print($repo->run('rev-parse HEAD')); ?><br/>
       <?php if ($forcecheck == "true") { ?>
-      Online www branch version: <?php $repo->run('fetch'); print($repo->run('rev-parse origin/www')); ?><br/> 
+      Online www branch version: <?php 
+          $repo->run('fetch'); 
+          print($repo->run('rev-parse origin/www')); 
+          ?><br/> 
       <?php } else { ?>
       <a href="settings.php?u=true" class="label">Check for updates</a><br/>
       <?php } ?>
