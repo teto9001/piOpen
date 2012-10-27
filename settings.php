@@ -17,6 +17,7 @@ $forcecheck = $_GET["u"];
       <?php } else { ?>
       <a href="settings.php?u=true" class="label">Check for updates</a><br/>
       <?php } ?>
+      <br/>
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
       <div id="loading" class="progress progress-striped active hide">
         <div class="bar" style="width: 100%;"></div>
