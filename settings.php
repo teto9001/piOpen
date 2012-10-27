@@ -2,7 +2,7 @@
 <?php include('includes/top.php'); 
 require_once "includes/git.php";
 $repo = Git::open('/var/www');
-$forcecheck = $_POST["u"];
+$forcecheck = $_GET["u"];
  ?>
 
     <div class="container">
