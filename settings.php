@@ -2,14 +2,16 @@
 <?php include('includes/top.php'); 
 require_once "includes/git.php";
 $repo = Git::open('/var/www');
+$forcecheck = $_POST["u"];
  ?>
 
     <div class="container">
      <div class="span8 offset2 well">
       <h1 style="color:#D00;">Settings</h1>
       Current www branch version: <?php print($repo->run('rev-parse HEAD')); ?><br/>
+      <?php if ($forcecheck = "true") { ?>
       Online www branch version: <?php $repo->run('fetch'); print($repo->run('rev-parse origin/www')); ?><br/> 
-
+      <?php } ?>
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
       <div id="loading" class="progress progress-striped active hide">
         <div class="bar" style="width: 100%;"></div>
