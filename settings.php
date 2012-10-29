@@ -17,7 +17,7 @@ $forcecheck = $_GET["u"];
      <div class="span8 offset2 well">
       <h1 style="color:#D00;">Settings</h1>
 <!-- GIT STUFF, disabled on the demo site -->
-<?php if ($demo==true) { ?>
+<?php if (!$demo) { ?>
       Current www branch version: <?php print($repowww->run('rev-parse HEAD')); ?><br/>
       <?php if ($forcecheck == "true") { ?>
       Online www branch version: <?php 
