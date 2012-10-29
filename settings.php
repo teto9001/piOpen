@@ -35,12 +35,6 @@ $forcecheck = $_GET["u"];
       <?php } ?>
       <br/>
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
-<hr>
-      <a href="#" id="reboot" class="btn btn-warning">Reboot</a><br>
-<?php    }    ?>
-<!-- END GIT STUFF, disabled on the demo site -->
-      
-
       <div id="loading" class="progress progress-striped active hide">
         <div class="bar" style="width: 100%;"></div>
       </div>
@@ -53,7 +47,7 @@ $forcecheck = $_GET["u"];
               timeout: 30000,
               url: "includes/update.php",
               error: function (request, status, error) {
-               $("#updateresult").text(request.responseText);
+               $("#updateresult").html("<b>There was an error. piOpen NOT updated. Details:</b><br>"+request.responseText);
                $("#updateresult").addClass("alert alert-warning");
                $("#cmdupdate").text("Retry");
                $("#loading").hide();
@@ -68,6 +62,13 @@ $forcecheck = $_GET["u"];
             });
       });
       </script>
+<hr>
+      <a href="#" id="reboot" class="btn btn-warning">Reboot</a><br>
+<?php    }    ?>
+<!-- END GIT STUFF, disabled on the demo site -->
+      
+
+      
      </div>
     </div> <!-- /container -->
 
