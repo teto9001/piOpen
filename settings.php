@@ -2,6 +2,7 @@
 
 $page="settings";
 $hostname=exec('hostname');
+if ($hostname != 'piOpen') {$demo=true;}
 include('includes/top.php'); 
 require_once "includes/git.php";
 if ($hostname=='piOpen') {  
@@ -14,6 +15,8 @@ $forcecheck = $_GET["u"];
     <div class="container">
      <div class="span8 offset2 well">
       <h1 style="color:#D00;">Settings</h1>
+<!-- GIT STUFF, disabled on the demo site -->
+<?php if ($demo) { ?>
       Current www branch version: <?php print($repowww->run('rev-parse HEAD')); ?><br/>
       <?php if ($forcecheck == "true") { ?>
       Online www branch version: <?php 
@@ -29,11 +32,14 @@ $forcecheck = $_GET["u"];
           ?><br/> 
       <?php } else { ?>
       <a href="settings.php?u=true" class="label">Check for updates</a><br/>
-      <?php } ?>
-
+      <?php } 
+    }
+    ?>
+<!-- END GIT STUFF, disabled on the demo site -->
       
       <br/>
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
+
       <div id="loading" class="progress progress-striped active hide">
         <div class="bar" style="width: 100%;"></div>
       </div>
