@@ -1,7 +1,8 @@
-<!-- v0001 -->
-<?php include('includes/top.php'); 
+<?php 
+$page="settings";
+include('includes/top.php'); 
 require_once "includes/git.php";
-$repowww = Git::open('/var/www');
+$repowww = Git::open('/var/www') or die("Errore");
 $reposcripts = Git::open('/var/piopen');
 $forcecheck = $_GET["u"];
  ?>
