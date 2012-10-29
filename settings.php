@@ -17,18 +17,18 @@ $forcecheck = $_GET["u"];
       <h1 style="color:#D00;">Settings</h1>
 <!-- GIT STUFF, disabled on the demo site -->
 <?php if (!$demo) { ?>
-      Current www branch version: <?php print($repowww->run('rev-parse HEAD')); ?><br/>
+      Current www branch version: <?php print(substr($repowww->run('rev-parse HEAD'),0,7)); ?><br/>
       <?php if ($forcecheck == "true") { ?>
       Online www branch version: <?php 
           $repowww->run('fetch'); 
-          print($repowww->run('rev-parse origin/www')); 
+          print(substr($repowww->run('rev-parse origin/www'),0,7)); 
           ?><br/> 
       <?php } ?>
-            Current scripts branch version: <?php print($reposcripts->run('rev-parse HEAD')); ?><br/>
+            Current scripts branch version: <?php print(substr($reposcripts->run('rev-parse HEAD'),0,7)); ?><br/>
       <?php if ($forcecheck == "true") { ?>
       Online scripts branch version: <?php 
           $reposcripts->run('fetch'); 
-          print($reposcripts->run('rev-parse origin/shellScripts')); 
+          print(substr($reposcripts->run('rev-parse origin/shellScripts'),0,7)); 
           ?><br/> 
       <?php } else { ?>
       <a href="settings.php?u=true" class="label">Check for updates</a><br/>
