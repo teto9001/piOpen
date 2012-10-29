@@ -2,7 +2,7 @@
 
 $page="settings";
 $hostname=exec('hostname');
-if ($hostname != 'piOpen') { $demo=true; }
+if ($hostname == 'piOpen') { $demo=false; } else { $demo=true; }
 include('includes/top.php'); 
 require_once "includes/git.php";
 if ($hostname=='piOpen') {  
