@@ -35,7 +35,7 @@ $forcecheck = $_GET["u"];
       <?php } ?>
       <br/>
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
-<div class="span8 offset2 well"> </div>
+<hr>
       <a href="#" id="reboot" class="btn btn-warning">Reboot</a><br>
 <?php    }    ?>
 <!-- END GIT STUFF, disabled on the demo site -->
