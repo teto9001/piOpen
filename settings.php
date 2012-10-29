@@ -3,7 +3,6 @@
 $page="settings";
 $hostname=exec('hostname');
 if ($hostname == 'piOpen') { $demo=false; } else { $demo=true; }
-print $hostname."...".$demo."<br>";
 include('includes/top.php'); 
 require_once "includes/git.php";
 if ($hostname=='piOpen') {  
@@ -33,13 +32,14 @@ $forcecheck = $_GET["u"];
           ?><br/> 
       <?php } else { ?>
       <a href="settings.php?u=true" class="label">Check for updates</a><br/>
-      <?php } 
-    }
-    ?>
-<!-- END GIT STUFF, disabled on the demo site -->
-      
+      <?php } ?>
       <br/>
       <a href="#" id="cmdupdate" class="btn btn-primary">Update</a><br>&nbsp;
+<div class="span8 offset2 well"> </div>
+      <a href="#" id="reboot" class="btn btn-warning">Reboot</a><br>
+<?php    }    ?>
+<!-- END GIT STUFF, disabled on the demo site -->
+      
 
       <div id="loading" class="progress progress-striped active hide">
         <div class="bar" style="width: 100%;"></div>
