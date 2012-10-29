@@ -1,9 +1,13 @@
 <?php 
+
 $page="settings";
+$hostname=exec('hostname');
 include('includes/top.php'); 
 require_once "includes/git.php";
-//$repowww = Git::open('/var/www') or die("Error");
-//$reposcripts = Git::open('/var/piopen') or die("Error");
+if ($hostname=='piOpen') {  
+  $repowww = Git::open('/var/www');
+  $reposcripts = Git::open('/var/piopen');
+}
 $forcecheck = $_GET["u"];
  ?>
 
