@@ -2,7 +2,7 @@
 
 $page="settings";
 $hostname=exec('hostname');
-if ($hostname != 'piOpen') {$demo=true;}
+if ($hostname != 'piOpen') { $demo=true; }
 include('includes/top.php'); 
 require_once "includes/git.php";
 if ($hostname=='piOpen') {  
@@ -16,7 +16,7 @@ $forcecheck = $_GET["u"];
      <div class="span8 offset2 well">
       <h1 style="color:#D00;">Settings</h1>
 <!-- GIT STUFF, disabled on the demo site -->
-<?php if ($demo) { ?>
+<?php if ($demo==true) { ?>
       Current www branch version: <?php print($repowww->run('rev-parse HEAD')); ?><br/>
       <?php if ($forcecheck == "true") { ?>
       Online www branch version: <?php 
