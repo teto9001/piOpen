@@ -2,8 +2,8 @@
 $page="settings";
 include('includes/top.php'); 
 require_once "includes/git.php";
-$repowww = Git::open('/var/www') or die("Error");
-$reposcripts = Git::open('/var/piopen') or die("Error");
+//$repowww = Git::open('/var/www') or die("Error");
+//$reposcripts = Git::open('/var/piopen') or die("Error");
 $forcecheck = $_GET["u"];
  ?>
 

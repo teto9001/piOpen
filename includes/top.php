@@ -51,9 +51,9 @@
           <a class="brand" href="index.php" style="color:#D00;">piOpen</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="index.php"<?php if ($page=="home") { print " class='active'"; } ?>>Home</a></li>
-              <li><a href="settings.php"<?php if ($page=="settings") { print " class='active'"; } ?>>Settings</a></li>
-              <li><a href="about.php"<?php if ($page=="about") { print " class='active'"; } ?>>About</a></li>
+              <li<?php if ($page=="home") { print " class='active'"; } ?>><a href="index.php">Home</a></li>
+              <li<?php if ($page=="settings") { print " class='active'"; } ?>><a href="settings.php">Settings</a></li>
+              <li<?php if ($page=="about") { print " class='active'"; } ?>><a href="about.php">About</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
